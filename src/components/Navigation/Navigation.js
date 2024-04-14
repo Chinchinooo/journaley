@@ -11,9 +11,6 @@ const Navigation = () => {
           <span class="my-0 flex text-dark font-semibold text-[1.35rem]/[1.2] flex-col justify-center">
               Profile
           </span>
-          <span class="pt-1 text-secondary-dark text-[0.95rem] font-medium">
-              See all your notifications
-              </span>
           </div>
           <div class="flex items-center lg:shrink-0 lg:flex-nowrap">
           <div class="relative flex items-center lg:ml-4 sm:mr-0 mr-2">
