@@ -6,7 +6,7 @@ const Navigation = () => {
     <div>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/riva-dashboard-tailwind/riva-dashboard.css"/>
       <div class="flex flex-wrap -mx-3 mb-5">
-        <div class="px-3 mb-6  mx-auto w-11/12 bg-white rounded-xl">
+        <div class="px-3 mx-auto w-full bg-white rounded-xl">
             <div class="sm:flex items-stretch justify-between grow lg:mb-0  py-5 px-5">
           <div class="flex flex-col flex-wrap justify-center mb-5 mr-3 lg:mb-0">
           <span class="my-0 flex text-dark font-semibold text-[1.35rem]/[1.2] flex-col justify-center">
