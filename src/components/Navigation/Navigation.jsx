@@ -1,5 +1,6 @@
 import React from 'react';
 import calendar from './calendar.png';
+import home from './home.png';
 
 const Navigation = () => {
   return (
@@ -34,21 +35,19 @@ const Navigation = () => {
               </svg>
               </a>
           </div>
+            <div class="relative flex items-center ml-2 lg:ml-4">
+              <a href="javascript:void(0)" class="flex items-center justify-center w-12 h-12 text-base font-medium leading-normal text-center align-middle transition-colors duration-150 ease-in-out bg-transparent border border-solid shadow-none cursor-pointer rounded-2xl text-stone-500 border-stone-200 hover:bg-gray-300 active:bg-gray-300 focus:bg-gray-300">
+              <img src={home} alt='home' class="2-6 h-6"/>
+              </a>
+          </div>
           <div class="relative flex items-center ml-2 lg:ml-4">
               <a href="javascript:void(0)" class="flex items-center justify-center w-12 h-12 text-base font-medium leading-normal text-center align-middle transition-colors duration-150 ease-in-out bg-transparent border border-solid shadow-none cursor-pointer rounded-2xl text-stone-500 border-stone-200 hover:bg-gray-300 active:bg-gray-300 focus:bg-gray-300">
               <img src={calendar} alt='calendar' class="w-6 h-6"/>
               </a>
           </div>
           <div class="relative flex items-center ml-2 lg:ml-4">
-              <a href="javascript:void(0)" class="flex items-center justify-center w-12 h-12 text-base font-medium leading-normal text-center align-middle transition-colors duration-150 ease-in-out bg-transparent border border-solid shadow-none cursor-pointer rounded-2xl text-stone-500 border-stone-200 hover:bg-gray-300 active:bg-gray-300 focus:bg-gray-300">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5"></path>
-              </svg>
-              </a>
-          </div>
-          <div class="relative flex items-center ml-2 lg:ml-4">
-              <a href="javascript:void(0)" class="flex items-center justify-center w-12 h-12 text-base font-semibold leading-normal text-center text-white align-middle transition-colors duration-150 ease-in-out shadow-none cursor-pointer rounded-2xl bg-primary hover:bg-primary-dark active:bg-primary-dark focus:bg-primary-dark ">
-              <span class="text-[1.15rem]">6</span>
+              <a href="javascript:void(0)" class="flex items-center justify-center w-28 h-12 text-base font-semibold leading-normal text-center text-white align-middle transition-colors duration-150 ease-in-out shadow-none cursor-pointer rounded-2xl bg-primary hover:bg-primary-dark active:bg-primary-dark focus:bg-primary-dark ">
+              <span class="text-[1.15rem]">Log out</span>
               </a>
           </div>
           </div>
