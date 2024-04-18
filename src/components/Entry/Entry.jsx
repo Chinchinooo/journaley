@@ -4,7 +4,7 @@ const Entry = () => {
     return(
         <div>
 
-        <div class="bg-white h-screen shadow-md mb-3 rounded-3xl p-4 ml-4">
+        <div class="bg-white h-screen shadow-md mb-3 rounded-3xl ml-4 p-14">
                 <div class="flex-none lg:flex">
                     <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
                         <img src="https://images.unsplash.com/photo-1622180203374-9524a54b734d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
@@ -12,10 +12,10 @@ const Entry = () => {
                     </div>
                     <div class="flex-auto ml-3 justify-evenly py-2">
                         <div class="flex flex-wrap ">
-                            <div class="w-full flex-none text-xs text-blue-700 font-medium ">
+                            <div class="w-full flex-none text-s text-blue-700 font-medium -mt-2 mb-2 ">
                                 Happy
                             </div>
-                            <h2 class="flex-auto text-lg font-medium">I got a new job interview!</h2>
+                            <h2 class="flex-auto text-2xl font-medium">I got a new job interview!</h2>
                         </div>
                         <p class="mt-3"></p>
                         <div class="flex py-4  text-sm text-gray-500">
@@ -53,6 +53,9 @@ const Entry = () => {
                         </div>
                     </div>
                 </div>
+                <p class="flex-auto text-lg text-justify mt-8">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim lobortis scelerisque fermentum dui faucibus in ornare. Eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Id ornare arcu odio ut sem nulla pharetra diam sit. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis.<br></br><br></br>Ornare arcu dui vivamus arcu felis bibendum ut. Nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum. Venenatis a condimentum vitae sapien pellentesque habitant morbi tristique. Senectus et netus et malesuada fames ac turpis egestas maecenas. Pellentesque id nibh tortor id aliquet lectus proin nibh nisl. Posuere urna nec tincidunt praesent semper feugiat nibh sed pulvinar.
+                </p>
             </div>
     </div>
 
