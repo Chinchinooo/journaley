@@ -4,7 +4,7 @@ const Entry = () => {
     return(
         <div>
 
-        <div class="bg-white h-screen shadow-md mb-3 rounded-3xl ml-4 p-14">
+        <div class="bg-white h-screen shadow-md mb-3 rounded-3xl p-14">
                 <div class="flex-none lg:flex">
                     <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
                         <img src="https://images.unsplash.com/photo-1622180203374-9524a54b734d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
@@ -44,7 +44,7 @@ const Entry = () => {
                             <div class="flex-auto flex">
                                 <button
                                     class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center">
-                                    <span>Edit Image</span>
+                                    <span>View Diary</span>
                                 </button>
                                 <button
                                 class="mb-2 ml-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"

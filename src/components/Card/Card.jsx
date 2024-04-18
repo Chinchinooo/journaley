@@ -44,7 +44,7 @@ const Card = () => {
                             <div class="flex-auto flex space-x-3">
                                 <button
                                     class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
-                                    <span>Edit Image</span>
+                                    <span>View Diary</span>
                                 </button>
                             </div>
                             <button

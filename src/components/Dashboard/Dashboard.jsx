@@ -7,7 +7,10 @@ const Dashboard = () => {
         <div>
             {/* SideBar */}
             <div class="flex">
-                <div class="ml-2 md:basis-1 lg:basis-1/3">
+                <div class="ml-2 md:basis-1 lg:basis-1/3 overflow-y-auto h-screen">
+                    <Card/>
+                    <Card/>
+                    <Card/>
                     <Card/>
                     <Card/>
                     <Card/>
