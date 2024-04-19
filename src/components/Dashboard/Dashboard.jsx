@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "../Card/Card";
 import Entry from "../Entry/Entry";
+import CardEntry from "../CardEntry/CardEntry";
 
 const Dashboard = () => {
     return(
@@ -8,12 +8,10 @@ const Dashboard = () => {
             {/* SideBar */}
             <div class="flex">
                 <div class="ml-2 md:basis-1 lg:basis-1/3 overflow-y-auto h-screen">
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
+                    <CardEntry/>
+                    <CardEntry/>
+                    <CardEntry/>
+                    <CardEntry/>
                 </div>
                 <div class="lg:basis-2/3">
                     <div class="hidden lg:block">

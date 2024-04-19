@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = () => {
+const CardEntry = () => {
   return (
     <div>
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
@@ -59,4 +59,4 @@ const Card = () => {
   );
 }
 
-export default Card;
+export default CardEntry;
