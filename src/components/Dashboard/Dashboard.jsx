@@ -15,7 +15,7 @@ const Dashboard = ({api}) => {
                 </div>
                 <div class="lg:basis-2/3">
                     <div class="hidden lg:block">
-                        <Entry/>
+                        <Entry id={api[0].id} emotion={api[0].emotion} title={api[0].title} time={api[0].time} location={api[0].location} content={api[0].content}/>
                     </div>
                 </div>
             </div>
