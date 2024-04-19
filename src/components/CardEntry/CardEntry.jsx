@@ -1,6 +1,6 @@
 import React from "react";
 
-const CardEntry = () => {
+const CardEntry = (props) => {
   return (
     <div>
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
@@ -13,9 +13,9 @@ const CardEntry = () => {
                     <div class="flex-auto ml-3 justify-evenly py-2">
                         <div class="flex flex-wrap ">
                             <div class="w-full flex-none text-xs text-blue-700 font-medium ">
-                                Emotion
+                                {props.emotion}
                             </div>
-                            <h2 class="flex-auto text-lg font-medium">Title</h2>
+                            <h2 class="flex-auto text-lg font-medium">{props.title}</h2>
                         </div>
                         <p class="mt-3"></p>
                         <div class="flex py-4  text-sm text-gray-500">
@@ -28,7 +28,7 @@ const CardEntry = () => {
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                 </svg>
-                                <p class="">Cochin,KL</p>
+                                <p class="">{props.location}</p>
                             </div>
                             <div class="flex-1 inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400" fill="none"
@@ -36,7 +36,7 @@ const CardEntry = () => {
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
-                                <p class="">05-25-2021</p>
+                                <p class="">{props.time}</p>
                             </div>
                         </div>
                         <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
