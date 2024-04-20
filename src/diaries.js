@@ -1,4 +1,4 @@
-export const api = [
+export const diaries = [
     {
         id: 1,
         emotion: 'Happy',

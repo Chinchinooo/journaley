@@ -1,13 +1,12 @@
 import './App.css';
 import Navigation from './components/Navigation/Navigation.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
-import {api} from './api.js'
 
 function App() {
   return (
     <div className="App">
       <Navigation/>
-      <Dashboard api={api}/>
+      <Dashboard/>
       
     </div>
   );
