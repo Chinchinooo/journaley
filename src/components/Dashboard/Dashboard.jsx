@@ -12,7 +12,11 @@ class Dashboard extends Component {
         }
     }
 
-    renderCardEntries() {
+    onViewButton = (diaries) => {
+        this.setState({selectedDiary: diaries})
+    }
+
+    renderCardEntries = () => {
         const {diaries} = this.state;
         return diaries.map((user, i) => (
         <CardEntry 
@@ -25,7 +29,6 @@ class Dashboard extends Component {
     }
    
     render() {
-        const {diaries} = this.state;
         const {selectedDiary} = this.state;
         return(
         <div>
