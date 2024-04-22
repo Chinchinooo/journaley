@@ -8,18 +8,25 @@ class Dashboard extends Component {
         super();
         this.state = {
             diaries: diaries,
-            entryState: ''
+            selectedDiary: diaries[diaries.length-1]
         }
     }
 
     renderCardEntries() {
         const {diaries} = this.state;
         return diaries.map((user, i) => (
-        <CardEntry key={user} id={diaries[i].id} emotion={diaries[i].emotion} title={diaries[i].title} time={diaries[i].time} location={diaries[i].location}/> 
+        <CardEntry 
+        key={diaries[i].id} 
+        emotion={diaries[i].emotion} 
+        title={diaries[i].title} 
+        time={diaries[i].time} 
+        location={diaries[i].location}/> 
         ))
     }
    
     render() {
+        const {diaries} = this.state;
+        const {selectedDiary} = this.state;
         return(
         <div>
             {/* SideBar */}
@@ -30,12 +37,13 @@ class Dashboard extends Component {
                 <div class="lg:basis-2/3">
                     <div class="hidden lg:block">
                         <Entry
-                        id={this.state.diaries[0].id}
-                        emotion={this.state.diaries[0].emotion}
-                        title={this.state.diaries[0].title}
-                        time={this.state.diaries[0].time}
-                        location={this.state.diaries[0].location}
-                        content={this.state.diaries[0].content}/>
+                        id={selectedDiary.id}
+                        emotion={selectedDiary.emotion}
+                        title={selectedDiary.title}
+                        time={selectedDiary.time}
+                        location={selectedDiary.location}
+                        content={selectedDiary.content}
+                        /> 
                     </div>
                 </div>
             </div>
