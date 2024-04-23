@@ -43,10 +43,6 @@ const Entry = (props) => {
                         <div class="flex text-sm font-medium">
                             <div class="flex-auto flex">
                                 <button
-                                    class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center">
-                                    <span>View Diary</span>
-                                </button>
-                                <button
                                 class="mb-2 ml-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
                                 type="button" aria-label="like">Edit Diary</button>
                             </div>

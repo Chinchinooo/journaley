@@ -12,20 +12,18 @@ class Dashboard extends Component {
         }
     }
 
-    onViewButton = (diaries) => {
-        this.setState({selectedDiary: diaries})
+    onViewButton = (diary) => {
+        this.setState({selectedDiary: diary})
     }
 
     renderCardEntries = () => {
         const {diaries} = this.state;
-        return diaries.map((user, i) => (
+        return diaries.map((diary) => (
         <CardEntry 
-        key={diaries[i].id} 
-        emotion={diaries[i].emotion} 
-        title={diaries[i].title} 
-        time={diaries[i].time} 
-        location={diaries[i].location}/> 
-        ))
+        onViewButton={() => this.onViewButton(diary)}
+        key={diary.id} 
+        diary={diary}/> 
+        ));
     }
    
     render() {

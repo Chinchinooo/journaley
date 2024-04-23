@@ -1,6 +1,6 @@
 import React from "react";
 
-const CardEntry = (props) => {
+const CardEntry = ({diary, onViewButton}) => {
   return (
     <div>
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
@@ -13,9 +13,9 @@ const CardEntry = (props) => {
                     <div class="flex-auto ml-3 justify-evenly py-2">
                         <div class="flex flex-wrap ">
                             <div class="w-full flex-none text-xs text-blue-700 font-medium ">
-                                {props.emotion}
+                                {diary.emotion}
                             </div>
-                            <h2 class="flex-auto text-lg font-medium">{props.title}</h2>
+                            <h2 class="flex-auto text-lg font-medium">{diary.title}</h2>
                         </div>
                         <p class="mt-3"></p>
                         <div class="flex py-4  text-sm text-gray-500">
@@ -28,7 +28,7 @@ const CardEntry = (props) => {
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                 </svg>
-                                <p class="">{props.location}</p>
+                                <p class="">{diary.location}</p>
                             </div>
                             <div class="flex-1 inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400" fill="none"
@@ -36,15 +36,22 @@ const CardEntry = (props) => {
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
-                                <p class="">{props.time}</p>
+                                <p class="">{diary.time}</p>
                             </div>
                         </div>
                         <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
                         <div class="flex space-x-3 text-sm font-medium">
                             <div class="flex-auto flex space-x-3">
                                 <button
-                                    class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2">
-                                    <span>View Diary</span>
+                                    class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2"
+                                    onClick={() => onViewButton(diary)}>
+                                    View Diary
+                                </button>
+                                <button
+                                    class="mb-2 ml-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
+                                    type="button"
+                                    aria-label="like">
+                                    Delete
                                 </button>
                             </div>
                         </div>
