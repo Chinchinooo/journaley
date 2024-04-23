@@ -27,8 +27,8 @@ Nav
     - select on the date can show the entry (next step)
 
 Card
-  View Diary
-    - active - card === entry
+  Done (View Diary
+    - active - card === entry)
   Edit Diary
     -active - edit card through entry
   Time and location

@@ -16,15 +16,37 @@ class Dashboard extends Component {
         this.setState({selectedDiary: diary})
     }
 
+    handleDelete = (diaryToDelete) => {
+        this.setState(
+            (prevState) => ({
+                diaries: prevState.diaries.filter((diary) => diary.id !== diaryToDelete.id),
+            }),
+            () => {
+                const {diaries, selectedDiary} = this.state;
+
+                if (diaryToDelete.id === selectedDiary.id) {
+                    const newSelectedDiary = diaries.length > 0
+                        ? diaries[diaries.length-1]
+                        : null;
+
+                this.setState({ selectedDiary: newSelectedDiary});
+                }
+            }
+        );
+    };
+    
+
     renderCardEntries = () => {
         const {diaries} = this.state;
         return diaries.map((diary) => (
         <CardEntry 
-        onViewButton={() => this.onViewButton(diary)}
         key={diary.id} 
-        diary={diary}/> 
+        diary={diary}
+        onViewButton={() => this.onViewButton(diary)}
+        handleDelete={() => this.handleDelete(diary)}/> 
         ));
     }
+   
    
     render() {
         const {selectedDiary} = this.state;
