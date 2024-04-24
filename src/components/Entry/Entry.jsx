@@ -42,6 +42,7 @@ const Entry = (props) => {
                         <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
                         <div class="flex text-sm font-medium">
                             <div class="flex-auto flex">
+                                
                                 <button
                                 class="mb-2 ml-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
                                 type="button" aria-label="like">Edit Diary</button>
@@ -49,7 +50,7 @@ const Entry = (props) => {
                         </div>
                     </div>
                 </div>
-                <p class="flex-auto text-lg text-justify mt-8">
+                <p contentEditable='true' class="flex-auto text-lg text-justify mt-8">
                         {props.content}
                 </p>
             </div>

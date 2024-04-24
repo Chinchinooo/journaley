@@ -35,7 +35,6 @@ class Dashboard extends Component {
         );
     };
     
-
     renderCardEntries = () => {
         const {diaries} = this.state;
         return diaries.map((diary) => (

@@ -29,6 +29,8 @@ Nav
 Card
   Done (View Diary
     - active - card === entry)
+  Done (Delete Button
+    -delete the card)
   Edit Diary
     -active - edit card through entry
   Time and location
