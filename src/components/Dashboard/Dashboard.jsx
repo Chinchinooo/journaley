@@ -2,14 +2,23 @@ import React, { Component } from "react";
 import Entry from "../Entry/Entry";
 import CardEntry from "../CardEntry/CardEntry";
 import {diaries} from "../../diaries";
+import { isEditable } from "@testing-library/user-event/dist/utils";
 
 class Dashboard extends Component {
     constructor() {
         super();
         this.state = {
             diaries: diaries,
-            selectedDiary: diaries[diaries.length-1]
+            selectedDiary: diaries[diaries.length-1],
+            isEditable: false
         }
+        this.paragraphRef = React.createRef();
+    }
+
+    handleToggleEdit() {
+        this.setState((prevState) => ({
+            isEditable: !prevState.isEditable
+        }))
     }
 
     onViewButton = (diary) => {
@@ -49,6 +58,8 @@ class Dashboard extends Component {
    
     render() {
         const {selectedDiary} = this.state;
+        const {isEditable} = this.state;
+        const backgroundColor = isEditable ? '#ffff' : '#ffe44d'
         return(
         <div>
             {/* SideBar */}
@@ -65,6 +76,7 @@ class Dashboard extends Component {
                         time={selectedDiary.time}
                         location={selectedDiary.location}
                         content={selectedDiary.content}
+                        ref
                         /> 
                     </div>
                 </div>
