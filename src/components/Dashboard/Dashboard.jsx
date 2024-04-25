@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Entry from "../Entry/Entry";
 import CardEntry from "../CardEntry/CardEntry";
 import {diaries} from "../../diaries";
-import { isEditable } from "@testing-library/user-event/dist/utils";
 
 class Dashboard extends Component {
     constructor() {
@@ -13,6 +12,7 @@ class Dashboard extends Component {
             isEditable: false
         }
         this.paragraphRef = React.createRef();
+        this.handleToggleEdit = this.handleToggleEdit.bind(this);
     }
 
     handleToggleEdit() {
@@ -39,6 +39,7 @@ class Dashboard extends Component {
                         : null;
 
                 this.setState({ selectedDiary: newSelectedDiary});
+                 this.handleToggleEdit = this.handleToggleEdit.bind(this);
                 }
             }
         );
@@ -57,9 +58,7 @@ class Dashboard extends Component {
    
    
     render() {
-        const {selectedDiary} = this.state;
-        const {isEditable} = this.state;
-        const backgroundColor = isEditable ? '#ffff' : '#ffe44d'
+        const {selectedDiary, isEditable} = this.state;
         return(
         <div>
             {/* SideBar */}
@@ -70,13 +69,10 @@ class Dashboard extends Component {
                 <div class="lg:basis-2/3">
                     <div class="hidden lg:block">
                         <Entry
-                        id={selectedDiary.id}
-                        emotion={selectedDiary.emotion}
-                        title={selectedDiary.title}
-                        time={selectedDiary.time}
-                        location={selectedDiary.location}
-                        content={selectedDiary.content}
-                        ref
+                        selectedDiary={selectedDiary}
+                        ref={this.paragraphRef}
+                        handleToggleEdit={this.handleToggleEdit}
+                        isEditable={isEditable}
                         /> 
                     </div>
                 </div>
