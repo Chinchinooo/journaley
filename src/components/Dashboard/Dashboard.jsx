@@ -62,7 +62,7 @@ class Dashboard extends Component {
         <div>
             {/* SideBar */}
             <div class="flex">
-                <div class="ml-2 md:basis-1 lg:basis-1/3 overflow-y-auto h-screen">
+                <div class="ml-2 md:basis-1 lg:basis-1/3 overflow-y-auto pr-2 h-screen">
                    {this.renderCardEntries()}
                 </div>
                 <div class="lg:basis-2/3">

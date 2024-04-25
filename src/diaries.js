@@ -28,14 +28,16 @@ export const diaries = [
         emotion: 'Happy',
         title: 'They just called!',
         time: '04-01-2024',
-        location: 'Semporna'
+        location: 'Semporna',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim lobortis scelerisque fermentum dui faucibus in ornare. Eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Id ornare arcu odio ut sem nulla pharetra diam sit.'
     },
     {
         id: 5,
         emotion: 'Happy',
         title: 'I got the job!',
         time: '05-01-2024',
-        location: 'Semporna'
+        location: 'Semporna',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim lobortis scelerisque fermentum dui faucibus in ornare. Eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Id ornare arcu odio ut sem nulla pharetra diam sit.'
     },
     {
         id: 6,
