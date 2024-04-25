@@ -11,7 +11,6 @@ class Dashboard extends Component {
             selectedDiary: diaries[diaries.length-1],
             isEditable: false
         }
-        this.paragraphRef = React.createRef();
         this.handleToggleEdit = this.handleToggleEdit.bind(this);
     }
 
@@ -70,7 +69,6 @@ class Dashboard extends Component {
                     <div class="hidden lg:block">
                         <Entry
                         selectedDiary={selectedDiary}
-                        ref={this.paragraphRef}
                         handleToggleEdit={this.handleToggleEdit}
                         isEditable={isEditable}
                         /> 
