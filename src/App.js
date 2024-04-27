@@ -1,12 +1,14 @@
 import './App.css';
 import Navigation from './components/Navigation/Navigation.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
+import CreateNewCard from './components/CreateNewCard/CreateNewCard.jsx'
 
 function App() {
   return (
     <div className="App">
-      <Navigation/>
-      <Dashboard/>
+{/*       <Navigation/>
+      <Dashboard/> */}
+      <CreateNewCard/>
       
     </div>
   );
