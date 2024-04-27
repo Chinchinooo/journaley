@@ -15,9 +15,9 @@ function getDate() {
 function CreateNewCard() {
     const [currentDate, setCurrentDate] = useState(getDate());
     return(
-         <div>
+         <div class="h-screen w-screen flex items-center justify-center">
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
-        <div class="bg-white shadow-md mb-2 rounded-3xl p-4">
+        <div class="bg-white shadow-md mb-2 rounded-3xl p-4 w-6/12">
                 <div class="flex-none lg:flex">
                     <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
                         <img src="https://images.unsplash.com/photo-1622180203374-9524a54b734d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
@@ -32,10 +32,10 @@ function CreateNewCard() {
                             <div class="flex-auto text-lg font-medium">
                                 <input type="text" placeholder="Title"></input>
                             </div>
-                            
+
                         </div>
                         <p class="mt-3"></p>
-                        <div class="flex py-4  text-sm text-gray-500">
+                        <div class="flex start- py-4  text-sm text-gray-500">
                             <div class="flex-1 inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-gray-400" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -56,6 +56,12 @@ function CreateNewCard() {
                                 <p class="">{currentDate}</p>
                             </div>
                         </div>
+                        <button
+                                class="mb-2 ml-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
+                                type="button"
+                                aria-label="like"
+                                >Create Diary
+                        </button>
                         </div>
                     </div>
                 </div>
