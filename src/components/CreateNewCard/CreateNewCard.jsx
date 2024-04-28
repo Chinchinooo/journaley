@@ -13,7 +13,8 @@ function getDate() {
 
 
 function CreateNewCard() {
-    const [currentDate, setCurrentDate] = useState(getDate());
+    const currentDate = getDate();
+
     return(
          <div class="h-screen w-screen flex items-center justify-center">
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
@@ -23,7 +24,7 @@ function CreateNewCard() {
                         <img src="https://images.unsplash.com/photo-1622180203374-9524a54b734d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
                             alt="Just a flower" class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl"/>
                     </div>
-                    <div class="flex-auto ml-3 justify-evenly py-2">
+                    <div class="flex-auto ml-3 justify-center items-center  py-2">
                         <div class="flex flex-wrap ">
                             <div class="w-full flex-none text-xs text-blue-700 font-medium ">
                                 <input type="text" placeholder="How are you feeling?">
@@ -57,7 +58,7 @@ function CreateNewCard() {
                             </div>
                         </div>
                         <button
-                                class="mb-2 ml-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
+                                class=" bg-gray-900 px-4 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
                                 type="button"
                                 aria-label="like"
                                 >Create Diary
