@@ -2,8 +2,11 @@ import React from 'react';
 import calendar from './calendar.png';
 import home from './home.png';
 import add from './add.png';
+import CreateNewCard from '../CreateNewCard/CreateNewCard';
 
-const Navigation = () => {
+const Navigation = ({ handletoggleCreateCardVisibility, isCreateCardVisible }) => {
+  const buttonCreate = isCreateCardVisible ? <CreateNewCard/> : null
+
   return (
     <div>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/riva-dashboard-tailwind/riva-dashboard.css"/>
@@ -37,9 +40,14 @@ const Navigation = () => {
               </a>
           </div>
               <div class="relative flex items-center ml-2 lg:ml-4">
-              <a href="javascript:void(0)" class="flex items-center justify-center w-12 h-12 text-base font-medium leading-normal text-center align-middle transition-colors duration-150 ease-in-out bg-transparent border border-solid shadow-none cursor-pointer rounded-2xl text-stone-500 border-stone-200 hover:bg-gray-300 active:bg-gray-300 focus:bg-gray-300">
-              <img src={add} alt='add' class="w-6 h-6"/>
-              </a>
+              <button 
+                type="button" 
+                class="flex items-center justify-center w-12 h-12 text-base font-medium leading-normal text-center align-middle transition-colors duration-150 ease-in-out bg-transparent border border-solid shadow-none cursor-pointer rounded-2xl text-stone-500 border-stone-200 hover:bg-gray-300 active:bg-gray-300 focus:bg-gray-300"
+                onClick={handletoggleCreateCardVisibility}
+              >
+                {buttonCreate}
+                <img src={add} alt="create" class="w-6 h-6"/>
+              </button>
           </div>
             <div class="relative flex items-center ml-2 lg:ml-4">
               <a href="javascript:void(0)" class="flex items-center justify-center w-12 h-12 text-base font-medium leading-normal text-center align-middle transition-colors duration-150 ease-in-out bg-transparent border border-solid shadow-none cursor-pointer rounded-2xl text-stone-500 border-stone-200 hover:bg-gray-300 active:bg-gray-300 focus:bg-gray-300">

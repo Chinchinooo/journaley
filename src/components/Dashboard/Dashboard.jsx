@@ -1,38 +1,15 @@
 import React, { useState } from "react";
 import Entry from "../Entry/Entry";
 import CardEntry from "../CardEntry/CardEntry";
-import { diaries as initialDiaries } from "../../diaries";
 
-function Dashboard() {
-
-  const [diaries, setDiaries] = useState(initialDiaries);
-  const [selectedDiary, setSelectedDiary] = useState(
-    initialDiaries[initialDiaries.length - 1]
-  );
-  const [isEditable, setIsEditable] = useState(false);
-
-  const handleToggleEdit = () => {
-    setIsEditable((prev) => !prev);
-  };
-
-  const onViewButton = (diary) => {
-    setSelectedDiary(diary);
-  };
-
-  const handleDelete = (diaryToDelete) => {
-    setDiaries((prevDiaries) => {
-      const updatedDiaries = prevDiaries.filter(
-        (diary) => diary.id !== diaryToDelete.id
-      );
-      if (diaryToDelete.id === selectedDiary.id) {
-        const newSelectedDiary = updatedDiaries.length > 0
-          ? updatedDiaries[updatedDiaries.length - 1]
-          : null;
-        setSelectedDiary(newSelectedDiary);
-      }
-      return updatedDiaries;
-    });
-  };
+function Dashboard({
+    diaries,
+    selectedDiary,
+    isEditable,
+    handleToggleEdit,
+    onViewButton,
+    handleDelete,
+}) {
 
   const renderCardEntries = () => {
     return diaries.map((diary) => (
