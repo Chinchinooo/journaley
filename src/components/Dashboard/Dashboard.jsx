@@ -1,83 +1,70 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Entry from "../Entry/Entry";
 import CardEntry from "../CardEntry/CardEntry";
-import {diaries} from "../../diaries";
+import { diaries as initialDiaries } from "../../diaries";
 
-class Dashboard extends Component {
-    constructor() {
-        super();
-        this.state = {
-            diaries: diaries,
-            selectedDiary: diaries[diaries.length-1],
-            isEditable: false
-        }
-        this.handleToggleEdit = this.handleToggleEdit.bind(this);
-    }
+function Dashboard() {
 
-    handleToggleEdit() {
-        this.setState((prevState) => ({
-            isEditable: !prevState.isEditable
-        }))
-    }
+  const [diaries, setDiaries] = useState(initialDiaries);
+  const [selectedDiary, setSelectedDiary] = useState(
+    initialDiaries[initialDiaries.length - 1]
+  );
+  const [isEditable, setIsEditable] = useState(false);
 
-    onViewButton = (diary) => {
-        this.setState({selectedDiary: diary})
-    }
+  const handleToggleEdit = () => {
+    setIsEditable((prev) => !prev);
+  };
 
-    handleDelete = (diaryToDelete) => {
-        this.setState(
-            (prevState) => ({
-                diaries: prevState.diaries.filter((diary) => diary.id !== diaryToDelete.id),
-            }),
-            () => {
-                const {diaries, selectedDiary} = this.state;
+  const onViewButton = (diary) => {
+    setSelectedDiary(diary);
+  };
 
-                if (diaryToDelete.id === selectedDiary.id) {
-                    const newSelectedDiary = diaries.length > 0
-                        ? diaries[diaries.length-1]
-                        : null;
+  const handleDelete = (diaryToDelete) => {
+    setDiaries((prevDiaries) => {
+      const updatedDiaries = prevDiaries.filter(
+        (diary) => diary.id !== diaryToDelete.id
+      );
+      if (diaryToDelete.id === selectedDiary.id) {
+        const newSelectedDiary = updatedDiaries.length > 0
+          ? updatedDiaries[updatedDiaries.length - 1]
+          : null;
+        setSelectedDiary(newSelectedDiary);
+      }
+      return updatedDiaries;
+    });
+  };
 
-                this.setState({ selectedDiary: newSelectedDiary});
-                 this.handleToggleEdit = this.handleToggleEdit.bind(this);
-                }
-            }
-        );
-    };
-    
-    renderCardEntries = () => {
-        const {diaries} = this.state;
-        return diaries.map((diary) => (
-        <CardEntry 
-        key={diary.id} 
+  const renderCardEntries = () => {
+    return diaries.map((diary) => (
+      <CardEntry
+        key={diary.id}
         diary={diary}
-        onViewButton={() => this.onViewButton(diary)}
-        handleDelete={() => this.handleDelete(diary)}/> 
-        ));
-    }
-   
-   
-    render() {
-        const {selectedDiary, isEditable} = this.state;
-        return(
-        <div>
-            {/* SideBar */}
-            <div class="flex">
-                <div class="ml-2 md:basis-1 lg:basis-1/3 overflow-y-auto pr-2 h-screen">
-                   {this.renderCardEntries()}
-                </div>
-                <div class="lg:basis-2/3">
-                    <div class="hidden lg:block">
-                        <Entry
-                        selectedDiary={selectedDiary}
-                        handleToggleEdit={this.handleToggleEdit}
-                        isEditable={isEditable}
-                        /> 
-                    </div>
-                </div>
-            </div>
+        onViewButton={() => onViewButton(diary)}
+        handleDelete={() => handleDelete(diary)}
+      />
+    ));
+  };
+
+  return (
+    <div>
+      <div className="flex">
+         {/* SideBar */}
+        <div className="ml-2 md:basis-1 lg:basis-1/3 overflow-y-auto pr-2 h-screen">
+          {renderCardEntries()}
         </div>
-    );
-    }
+        {/* Content */}
+        <div className="lg:basis-2/3">
+          <div className="hidden lg:block">
+            <Entry
+              selectedDiary={selectedDiary}
+              handleToggleEdit={handleToggleEdit}
+              isEditable={isEditable}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Dashboard;
