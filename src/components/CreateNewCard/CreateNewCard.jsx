@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 
-function getDate() {
-  const today = new Date();
-  const month = today.getMonth() + 1;
-  const year = today.getFullYear();
-  const day = today.getDate();
-  const paddedDay = String(day).padStart(2, '0');
-  const paddedMonth = String(month).padStart(2, '0');
-
-  return `${paddedDay}-${paddedMonth}-${year}`;
-}
-
 function CreateNewCard() {
-    const currentDate = getDate();
     const [title, setTitle] = useState("");
+
+    const getDate = () => {
+        const today = new Date();
+        const month = today.getMonth() + 1;
+        const year = today.getFullYear();
+        const day = today.getDate();
+        const paddedDay = String(day).padStart(2, '0');
+        const paddedMonth = String(month).padStart(2, '0');
+
+    return `${paddedDay}-${paddedMonth}-${year}`;
+    }
+
+    const currentDate = getDate();
 
     const handleTitleChange = (event) => {
     setTitle(event.target.value);
