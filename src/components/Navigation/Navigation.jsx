@@ -4,8 +4,8 @@ import home from './home.png';
 import add from './add.png';
 import CreateNewCard from '../CreateNewCard/CreateNewCard';
 
-const Navigation = ({ handleCreateCardVisible, handleCreateCardNotVisible, isCreateCardVisible }) => {
-  const buttonCreate = isCreateCardVisible ? <CreateNewCard handleCreateCardNotVisible={handleCreateCardNotVisible}/> : null;
+const Navigation = ({ handleCreateCardVisible, handleCreateCardNotVisible, isCreateCardVisible, handleSaveDiary }) => {
+  const buttonCreate = isCreateCardVisible ? <CreateNewCard handleCreateCardNotVisible={handleCreateCardNotVisible}handleSaveDiary={handleSaveDiary}/> : null;
 
   return (
     <div>

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import xButton from "./x-button.png"
 
-const CreateNewCard = ({handleCreateCardNotVisible}) => {
-    const [title, setTitle] = useState("");
+const CreateNewCard = ({handleCreateCardNotVisible, handleSaveDiary}) => {
+  const [title, setTitle] = useState("");
+  const [emotion, setEmotion] = useState('');
+  const [location, setLocation] = useState('');
+  const [date, setDate] = useState('');
+  const [content, setContent] = useState('');
 
     const getDate = () => {
         const today = new Date();
@@ -15,11 +19,25 @@ const CreateNewCard = ({handleCreateCardNotVisible}) => {
     return `${paddedDay}-${paddedMonth}-${year}`;
     }
 
-    const currentDate = getDate();
+  const currentDate = getDate();
 
-    const handleTitleChange = (event) => {
-    setTitle(event.target.value);
-} 
+  const handleInput = () => {
+      const newDiary = {
+        title,
+        emotion,
+        location,
+        date,
+        content,
+      };
+      handleSaveDiary(newDiary);
+
+      setTitle('');
+      setEmotion('');
+      setLocation('');
+      setDate('');
+      setContent('');
+  };
+
 
     return(
    <div className="min-w-screen h-screen fixed left-0 top-0 flex justify-center items-center inset-0 z-50 bg-no-repeat bg-center bg-cover">
@@ -47,7 +65,9 @@ const CreateNewCard = ({handleCreateCardNotVisible}) => {
                 <input
                 type="text" 
                 placeholder="How are you feeling?"
-                className="text-center text-sm text-blue-700"/>
+                className="text-center text-sm text-blue-700"
+                value={emotion}
+                onChange={(e) => setEmotion(e.target.value)}/>
               </div>
               <div className="m-2"></div>
               </div>
@@ -58,7 +78,7 @@ const CreateNewCard = ({handleCreateCardNotVisible}) => {
                 className="text-center overflow-hidden text-ellipsis whitespace-nowrap"
                 style={{ maxWidth: "200px" }}
                 value={title} 
-                onChange={handleTitleChange} 
+                onChange={(e) => setTitle(e.target.value)} 
                 title={title}/>
               </div>
             </div>
@@ -86,7 +106,10 @@ const CreateNewCard = ({handleCreateCardNotVisible}) => {
                 <input
                 type="text" 
                 placeholder="location"
-                className=" text-sm"/>
+                className=" text-sm"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                />
               </div>
               <div className="inline-flex items-end pl-1">
                 <svg 
@@ -102,13 +125,17 @@ const CreateNewCard = ({handleCreateCardNotVisible}) => {
                             d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z">
                         </path>
                 </svg>
-                <p>{currentDate}</p>
+                <p
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                >{currentDate}</p>
               </div>
             </div>
             <div className="flex p-4 border-t border-gray-200"></div>
             <div className=" text-sm font-medium">
               <button
                 className="mb-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
+                onClick={handleInput}
                 >Save Diary
               </button>
             </div>

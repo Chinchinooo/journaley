@@ -3,7 +3,6 @@ import './App.css';
 import Navigation from './components/Navigation/Navigation.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
 import { diaries as initialDiaries } from "./diaries.js";
-import CreateNewCard from './components/CreateNewCard/CreateNewCard.jsx';
 
 function App() {
   const [diaries, setDiaries] = useState(initialDiaries);
@@ -46,9 +45,18 @@ function App() {
     });
   };
 
-  const handleCreateNewDiary = (newDiary) => {
+  const generateNextId = () => {
+    if (diaries.length === 0) return 1; 
+    const existingIds = diaries.map(diary => diary.id);
+    return Math.max(...existingIds) + 1;
+  };
+
+  const handleSaveDiary = (newDiary) => {
+    const newDiaryWithId = { ...newDiary, id: generateNextId() };
     setDiaries((prevDiaries) => {
-        return [...prevDiaries, newDiary]
+        const newestDiary = [...prevDiaries, newDiaryWithId]
+        console.log(newestDiary);
+        return newestDiary
     });
   };
 
@@ -59,7 +67,7 @@ function App() {
         isCreateCardVisible={isCreateCardVisible}
         handleCreateCardVisible={handleCreateCardVisible}
         handleCreateCardNotVisible={handleCreateCardNotVisible}
-        handleCreateNewDiary={handleCreateNewDiary}/>
+        handleSaveDiary={handleSaveDiary}/>
       <Dashboard
         diaries={diaries}
         selectedDiary={selectedDiary}
@@ -106,4 +114,10 @@ Do
 done -add a "x" on the createcard so it turns isCreateCardVisible to false and maybe use stop propagation()
 for the click to be activated on anywhere of the screen.
 -add in the save function createnewdiary
+
+-need to see how to dix where entry show latest if save diaries is updated
+-need to add where click save diary, the create new card will turn false
+-need to be the entry to be on edited mode automatically
+-fix id
+-edit doesnt update the content
 */
