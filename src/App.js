@@ -3,6 +3,7 @@ import './App.css';
 import Navigation from './components/Navigation/Navigation.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
 import { diaries as initialDiaries } from "./diaries.js";
+import CreateNewCard from './components/CreateNewCard/CreateNewCard.jsx';
 
 function App() {
   const [diaries, setDiaries] = useState(initialDiaries);
@@ -12,9 +13,14 @@ function App() {
   const [isEditable, setIsEditable] = useState(false);
   const [isCreateCardVisible, setCreateCardVisible] = useState(false);
 
-  const handletoggleCreateCardVisibility = () => {
-    console.log("visibility clicked");
-    setCreateCardVisible((prev) => !prev);
+  const handleCreateCardVisible = (click) => {
+    click.stopPropagation();
+    setCreateCardVisible((prev) => true);
+  }
+
+  const handleCreateCardNotVisible = (click) => {
+    click.stopPropagation();
+    setCreateCardVisible((prev) => false);
   }
 
   const handleToggleEdit = () => {
@@ -50,9 +56,10 @@ function App() {
   return (
     <div className="App">
       <Navigation
-      isCreateCardVisible={isCreateCardVisible}
-      handletoggleCreateCardVisibility={handletoggleCreateCardVisibility}
-      handleCreateNewDiary={handleCreateNewDiary}/>
+        isCreateCardVisible={isCreateCardVisible}
+        handleCreateCardVisible={handleCreateCardVisible}
+        handleCreateCardNotVisible={handleCreateCardNotVisible}
+        handleCreateNewDiary={handleCreateNewDiary}/>
       <Dashboard
         diaries={diaries}
         selectedDiary={selectedDiary}
@@ -96,7 +103,7 @@ Do
     - add image/emotion/text
     - save button
 
--add a "x" on the createcard so it turns isCreateCardVisible to false and maybe use stop propagation()
+done -add a "x" on the createcard so it turns isCreateCardVisible to false and maybe use stop propagation()
 for the click to be activated on anywhere of the screen.
 -add in the save function createnewdiary
 */

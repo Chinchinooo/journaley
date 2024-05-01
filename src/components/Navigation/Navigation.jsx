@@ -4,8 +4,8 @@ import home from './home.png';
 import add from './add.png';
 import CreateNewCard from '../CreateNewCard/CreateNewCard';
 
-const Navigation = ({ handletoggleCreateCardVisibility, isCreateCardVisible }) => {
-  const buttonCreate = isCreateCardVisible ? <CreateNewCard/> : null
+const Navigation = ({ handleCreateCardVisible, handleCreateCardNotVisible, isCreateCardVisible }) => {
+  const buttonCreate = isCreateCardVisible ? <CreateNewCard handleCreateCardNotVisible={handleCreateCardNotVisible}/> : null;
 
   return (
     <div>
@@ -43,7 +43,7 @@ const Navigation = ({ handletoggleCreateCardVisibility, isCreateCardVisible }) =
               <button 
                 type="button" 
                 class="flex items-center justify-center w-12 h-12 text-base font-medium leading-normal text-center align-middle transition-colors duration-150 ease-in-out bg-transparent border border-solid shadow-none cursor-pointer rounded-2xl text-stone-500 border-stone-200 hover:bg-gray-300 active:bg-gray-300 focus:bg-gray-300"
-                onClick={handletoggleCreateCardVisibility}
+                onClick={handleCreateCardVisible}
               >
                 {buttonCreate}
                 <img src={add} alt="create" class="w-6 h-6"/>

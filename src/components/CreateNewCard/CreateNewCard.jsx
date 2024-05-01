@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import xButton from "./x-button.png"
 
-function CreateNewCard() {
+const CreateNewCard = ({handleCreateCardNotVisible}) => {
     const [title, setTitle] = useState("");
 
     const getDate = () => {
@@ -25,7 +26,12 @@ function CreateNewCard() {
   <div className="absolute bg-black opacity-80 inset-0 z-0"></div>
   <div className="relative flex flex-col items-center justify-center p-5 w-full min-h-screen lg:w-8/12 xl:w-6/12 2xl:w-4/12 2xl:min-h-full"> 
     <div className="flex flex-col">
-      <div className="bg-white shadow-md rounded-3xl p-4 w-full h-auto 2xl:p-8 2xl:w-full 2xl:h-auto">
+      <button
+            className="relative flex justify-end pb-3"
+            onClick={handleCreateCardNotVisible}>
+            <img src={xButton} alt="Close" className="h-3 w-3" />
+      </button>
+      <div className="relative bg-white shadow-md rounded-3xl p-4 w-full h-auto 2xl:p-8 2xl:w-full 2xl:h-auto">
         <div className="flex-none lg:flex">
           <div className="h-full w-full lg:h-48 lg:w-48 lg:mb-0 mb-3">
             <img
