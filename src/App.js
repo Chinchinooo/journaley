@@ -56,6 +56,7 @@ function App() {
     setDiaries((prevDiaries) => {
         const newestDiary = [...prevDiaries, newDiaryWithId]
         console.log(newestDiary);
+        setSelectedDiary(newestDiary[newestDiary.length - 1]);
         return newestDiary
     });
   };
