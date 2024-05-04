@@ -2,24 +2,11 @@ import React, { useState } from "react";
 import xButton from "./x-button.png"
 
 const CreateNewCard = ({handleCreateCardNotVisible, handleSaveDiary}) => {
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState('');
   const [emotion, setEmotion] = useState('');
   const [location, setLocation] = useState('');
   const [date, setDate] = useState('');
   const [content, setContent] = useState('');
-
-    const getDate = () => {
-        const today = new Date();
-        const month = today.getMonth() + 1;
-        const year = today.getFullYear();
-        const day = today.getDate();
-        const paddedDay = String(day).padStart(2, '0');
-        const paddedMonth = String(month).padStart(2, '0');
-
-    return `${paddedDay}-${paddedMonth}-${year}`;
-    }
-
-  const currentDate = getDate();
 
   const handleInput = () => {
       const newDiary = {
@@ -124,10 +111,12 @@ const CreateNewCard = ({handleCreateCardNotVisible, handleSaveDiary}) => {
                             d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z">
                         </path>
                 </svg>
-                <p
+                <input
                 value={date}
-                onChange={(e) => setDate(e.target.value)}
-                >{currentDate}</p>
+                placeholder="date"
+                type="text"
+                onChange={(e) => setDate(e.target.value)}>
+                </input>
               </div>
             </div>
             <div className="flex p-4 border-t border-gray-200"></div>

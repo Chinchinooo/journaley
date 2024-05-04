@@ -23,7 +23,7 @@ const Entry = ({selectedDiary, handleToggleEdit, isEditable}) => {
                                 {selectedDiary.emotion || "How are you feeling..."}
                             </div>
                             <h2 
-                            class="flex-auto text-2xl font-medium rounded-3xl"
+                            class="w-full text-2xl font-medium flex-none mt-2 mb-2 rounded-3xl"
                             contentEditable={isEditable}
                              style={{backgroundColor}}
                              >
@@ -41,7 +41,11 @@ const Entry = ({selectedDiary, handleToggleEdit, isEditable}) => {
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                 </svg>
-                                <p class="">
+                                <p 
+                                class="rounded-3xl px-3"
+                                contentEditable={isEditable}
+                                style={{backgroundColor}}
+                                >
                                     {selectedDiary.location}
                                 </p>
                             </div>
@@ -51,8 +55,12 @@ const Entry = ({selectedDiary, handleToggleEdit, isEditable}) => {
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
-                                <p class="">
-                                    {selectedDiary.time}
+                                <p 
+                                class="rounded-3xl px-3"
+                                contentEditable={isEditable}
+                                style={{backgroundColor}}
+                                >
+                                    {selectedDiary.date}
                                 </p>
                             </div>
                         </div>
