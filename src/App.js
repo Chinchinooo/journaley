@@ -12,6 +12,7 @@ function App() {
   const [isEditable, setIsEditable] = useState(false);
   const [isCreateCardVisible, setCreateCardVisible] = useState(false);
 
+
   const handleCreateCardVisible = (click) => {
     click.stopPropagation();
     setCreateCardVisible((prev) => true);
@@ -121,4 +122,8 @@ for the click to be activated on anywhere of the screen.
 -need to be the entry to be on edited mode automatically
 -fix id
 -edit doesnt update the content
+
+
+issue:
+-title, emotion, all edited did not updated the data
 */

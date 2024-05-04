@@ -23,9 +23,11 @@ const Entry = ({selectedDiary, handleToggleEdit, isEditable}) => {
                                 {selectedDiary.emotion || "How are you feeling..."}
                             </div>
                             <h2 
-                            class="w-full text-2xl font-medium flex-none mt-2 mb-2 rounded-3xl"
+                            class="w-full text-2xl font-medium flex-none mt-2 mb-2 rounded-3xl overflow-hidden text-ellipsis whitespace-nowrap"
                             contentEditable={isEditable}
                              style={{backgroundColor}}
+                             title={selectedDiary.title}
+
                              >
                                 {selectedDiary.title || "Enter a title..."}
                              </h2>

@@ -25,6 +25,17 @@ const CreateNewCard = ({handleCreateCardNotVisible, handleSaveDiary}) => {
       setContent('');
   };
 
+    const handleTitle = (e) => {
+      const maxLength = 80;
+      const newInput= e.target.value;
+
+      const maxText = newInput.length > maxLength
+        ? newInput.slice(0, maxLength)
+        : newInput;
+
+      setTitle(maxText);
+    }
+
 
     return(
    <div className="min-w-screen h-screen fixed left-0 top-0 flex justify-center items-center inset-0 z-50 bg-no-repeat bg-center bg-cover">
@@ -65,7 +76,7 @@ const CreateNewCard = ({handleCreateCardNotVisible, handleSaveDiary}) => {
                 className="text-center whitespace-nowrap"
                 style={{ maxWidth: "200px" }}
                 value={title} 
-                onChange={(e) => setTitle(e.target.value)} />
+                onChange={handleTitle} />
               </div>
             </div>
             <div className="flex py-4 text-sm text-gray-500">
