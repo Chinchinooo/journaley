@@ -75,11 +75,10 @@ const CreateNewCard = ({handleCreateCardNotVisible, handleSaveDiary}) => {
                 <input
                 type="text" 
                 placeholder="Title for your Diary"
-                className="text-center overflow-hidden text-ellipsis whitespace-nowrap"
+                className="text-center whitespace-nowrap"
                 style={{ maxWidth: "200px" }}
                 value={title} 
-                onChange={(e) => setTitle(e.target.value)} 
-                title={title}/>
+                onChange={(e) => setTitle(e.target.value)} />
               </div>
             </div>
             <div className="flex py-4 text-sm text-gray-500">

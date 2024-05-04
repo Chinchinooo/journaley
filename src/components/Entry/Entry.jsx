@@ -19,13 +19,15 @@ const Entry = ({selectedDiary, handleToggleEdit, isEditable}) => {
                             class="w-full flex-none text-s text-blue-700 font-medium -mt-2 mb-2 rounded-3xl "
                             contentEditable={isEditable}
                             style={{backgroundColor}}
-                            >{selectedDiary.emotion}
+                            >
+                                {selectedDiary.emotion || "How are you feeling..."}
                             </div>
                             <h2 
                             class="flex-auto text-2xl font-medium rounded-3xl"
                             contentEditable={isEditable}
                              style={{backgroundColor}}
-                             >{selectedDiary.title}
+                             >
+                                {selectedDiary.title || "Enter a title..."}
                              </h2>
                         </div>
                         <p class="mt-3"></p>
@@ -39,7 +41,9 @@ const Entry = ({selectedDiary, handleToggleEdit, isEditable}) => {
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                 </svg>
-                                <p class="">{selectedDiary.location}</p>
+                                <p class="">
+                                    {selectedDiary.location}
+                                </p>
                             </div>
                             <div class="flex-1 inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400" fill="none"
@@ -47,7 +51,9 @@ const Entry = ({selectedDiary, handleToggleEdit, isEditable}) => {
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
-                                <p class="">{selectedDiary.time}</p>
+                                <p class="">
+                                    {selectedDiary.time}
+                                </p>
                             </div>
                         </div>
                         <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
@@ -59,7 +65,8 @@ const Entry = ({selectedDiary, handleToggleEdit, isEditable}) => {
                                 type="button"
                                 aria-label="like"
                                 onClick={handleToggleEdit}
-                                >{buttonEditSave}
+                                >
+                                    {buttonEditSave}
                                 </button>
                             </div>
                         </div>
@@ -68,8 +75,9 @@ const Entry = ({selectedDiary, handleToggleEdit, isEditable}) => {
                 <p 
                 contentEditable={isEditable} 
                 class="flex-auto text-lg text-justify mt-8 pt-5 pr-8 pb-5 pl-8 rounded-3xl"
-                style={{backgroundColor}}>
-                    {selectedDiary.content}
+                style={{backgroundColor}}
+                >
+                    {selectedDiary.content || "Write more about it here..."}
                 </p>
             </div>
     </div>
