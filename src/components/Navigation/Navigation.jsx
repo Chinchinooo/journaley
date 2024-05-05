@@ -4,7 +4,7 @@ import home from './home.png';
 import add from './add.png';
 import CreateNewCard from '../CreateNewCard/CreateNewCard';
 
-const Navigation = ({ handleCreateCardVisible, handleCreateCardNotVisible, isCreateCardVisible, handleSaveDiary }) => {
+const Navigation = ({ handleCreateCardVisible, handleCreateCardNotVisible, isCreateCardVisible, handleSaveDiary, onSearchChange }) => {
   const buttonCreate = isCreateCardVisible ? <CreateNewCard handleCreateCardNotVisible={handleCreateCardNotVisible}handleSaveDiary={handleSaveDiary}/> : null;
 
   return (
@@ -25,15 +25,19 @@ const Navigation = ({ handleCreateCardVisible, handleCreateCardNotVisible, isCre
                   <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
               </svg>
               </span>
-              <input class="block w-full min-w-[70px] py-3 pl-12 pr-4 text-base font-medium leading-normal bg-white border border-solid outline-none appearance-none placeholder:text-secondary-dark peer text-stone-500 border-stone-200 bg-clip-padding rounded-2xl" placeholder="Search..." type="text"/>
-              <span onclick="(() => { this.previousElementSibling.value=''})()" class="absolute right-0 left-auto mr-4 leading-none -translate-y-1/2 peer-placeholder-shown:hidden top-1/2 hover:text-primary text-muted">
+              <input 
+                class="block w-full min-w-[70px] py-3 pl-12 pr-4 text-base font-medium leading-normal bg-white border border-solid outline-none appearance-none placeholder:text-secondary-dark peer text-stone-500 border-stone-200 bg-clip-padding rounded-2xl" 
+                placeholder="Search..." 
+                type="search"
+                onChange={onSearchChange}/>
+              <span onClick="(() => { this.previousElementSibling.value=''})()" class="absolute right-0 left-auto mr-4 leading-none -translate-y-1/2 peer-placeholder-shown:hidden top-1/2 hover:text-primary text-muted">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
               </span>
           </div>
           <div class="relative lg:hidden flex items-center sm:ml-2 ml-auto">
-              <a href="javascript:void(0)" class="flex items-center justify-center w-12 h-12 text-base font-medium leading-normal text-center align-middle transition-colors duration-150 ease-in-out bg-transparent border border-solid shadow-none cursor-pointer rounded-2xl text-stone-500 border-stone-200 hover:text-primary active:text-primary focus:text-primary" onclick="(function(){document.querySelector('.group\\/sidebar').classList.toggle('-translate-x-full');})();">
+              <a href="javascript:void(0)" class="flex items-center justify-center w-12 h-12 text-base font-medium leading-normal text-center align-middle transition-colors duration-150 ease-in-out bg-transparent border border-solid shadow-none cursor-pointer rounded-2xl text-stone-500 border-stone-200 hover:text-primary active:text-primary focus:text-primary" onClick="(function(){document.querySelector('.group\\/sidebar').classList.toggle('-translate-x-full');})();">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
               </svg>

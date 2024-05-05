@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Navigation from './components/Navigation/Navigation.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
@@ -7,11 +7,34 @@ import { diaries as initialDiaries } from "./diaries.js";
 function App() {
   const [diaries, setDiaries] = useState(initialDiaries);
   const [selectedDiary, setSelectedDiary] = useState(
-    initialDiaries[initialDiaries.length - 1]
-    );
+    initialDiaries[initialDiaries.length - 1]);
   const [isEditable, setIsEditable] = useState(false);
   const [isCreateCardVisible, setCreateCardVisible] = useState(false);
+  const [searchBox, setSearchBox] = useState('');
+  const [filteredDiary, setFilteredDiary] = useState([]);
 
+  useEffect(() => {
+    if (searchBox.trim() === '') {
+      setFilteredDiary(diaries);
+    } else {
+      const filteredCard = diaries.filter(diary => {
+        return diary.title.toLocaleLowerCase().includes(searchBox.toLowerCase());
+      });
+
+      setFilteredDiary(filteredCard)
+      console.log(filteredCard);
+
+      if (filteredCard.length === 0) {
+        console.log("No results found")
+      }
+    }
+  }, [searchBox, diaries]);
+
+  const onSearchChange = (event) => {
+    const searchInput = event.target.value;
+    setSearchBox(searchInput);
+    console.log(searchInput);
+  }
 
   const handleCreateCardVisible = (click) => {
     click.stopPropagation();
@@ -69,14 +92,20 @@ function App() {
         isCreateCardVisible={isCreateCardVisible}
         handleCreateCardVisible={handleCreateCardVisible}
         handleCreateCardNotVisible={handleCreateCardNotVisible}
-        handleSaveDiary={handleSaveDiary}/>
+        handleSaveDiary={handleSaveDiary}
+        onSearchChange={onSearchChange}
+        filteredDiary={filteredDiary}
+      />
+
       <Dashboard
         diaries={diaries}
         selectedDiary={selectedDiary}
         handleToggleEdit={handleToggleEdit}
         onViewButton={onViewButton}
         handleDelete={handleDelete}
-        isEditable={isEditable}/>
+        isEditable={isEditable}
+        onSearchChange={onSearchChange}
+        filteredDiary={filteredDiary}/>
       
     </div>
   );
@@ -122,6 +151,7 @@ for the click to be activated on anywhere of the screen.
 -need to be the entry to be on edited mode automatically
 -fix id
 -edit doesnt update the content
+-search bar
 
 
 issue:
