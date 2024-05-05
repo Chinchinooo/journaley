@@ -151,7 +151,8 @@ for the click to be activated on anywhere of the screen.
 -need to be the entry to be on edited mode automatically
 -fix id
 -edit doesnt update the content
--search bar
+done -search bar
+-the date is not shown in the entry
 
 
 issue:
