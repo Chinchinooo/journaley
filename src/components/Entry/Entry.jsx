@@ -62,7 +62,7 @@ const Entry = ({selectedDiary, handleToggleEdit, isEditable}) => {
                                 contentEditable={isEditable}
                                 style={{backgroundColor}}
                                 >
-                                    {selectedDiary.date}
+                                    {selectedDiary.time}
                                 </p>
                             </div>
                         </div>
