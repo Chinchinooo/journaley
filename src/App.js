@@ -13,6 +13,7 @@ function App() {
   const [searchBox, setSearchBox] = useState('');
   const [filteredDiary, setFilteredDiary] = useState([]);
 
+
   useEffect(() => {
     if (searchBox.trim() === '') {
       setFilteredDiary(diaries);
@@ -30,10 +31,10 @@ function App() {
     }
   }, [searchBox, diaries]);
 
+
   const onSearchChange = (event) => {
     const searchInput = event.target.value;
     setSearchBox(searchInput);
-    console.log(searchInput);
   }
 
   const handleCreateCardVisible = (click) => {
@@ -130,13 +131,15 @@ Card
     - active - card === entry)
   Done (Delete Button
     -delete the card)
-  Edit Diary
+  Done
+    Edit Diary
     -active - edit card through entry
-  Time and location
+  Done
+    Time and location
     -show time and location after save
 
-Do 
-  Create button
+Done 
+  Create button 
     - pop add new entry with emotion/title/date/location/image
     - add new card
     - add image/emotion/text
@@ -144,9 +147,10 @@ Do
 
 done -add a "x" on the createcard so it turns isCreateCardVisible to false and maybe use stop propagation()
 for the click to be activated on anywhere of the screen.
--add in the save function createnewdiary
+done -add in the save function createnewdiary
 
--need to see how to dix where entry show latest if save diaries is updated
+done -need to see how to dix where entry show latest if save diaries is updated
+
 -need to add where click save diary, the create new card will turn false
 -need to be the entry to be on edited mode automatically
 -fix id
@@ -157,4 +161,17 @@ done -search bar
 
 issue:
 -title, emotion, all edited did not updated the data
+
+Priority
+done -id
+postpone(temporarily removed the x button)
+  - x button in searchbox
+-date is not shown in entry after save and view diary
+-title (max width)
+-add format for date
+-save diary, the createnewcard close automatically
+-fix the data / backend
+-log in/logout
+
 */
+
