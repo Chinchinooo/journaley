@@ -28,13 +28,13 @@ const Navigation = ({ handleCreateCardVisible, handleCreateCardNotVisible, isCre
               <input 
                 class="block w-full min-w-[70px] py-3 pl-12 pr-4 text-base font-medium leading-normal bg-white border border-solid outline-none appearance-none placeholder:text-secondary-dark peer text-stone-500 border-stone-200 bg-clip-padding rounded-2xl" 
                 placeholder="Search..." 
-                type="search"
+                type="text" /* supposedly is search but deal with the clear button first */
                 onChange={onSearchChange}/>
-              <span onClick="(() => { this.previousElementSibling.value=''})()" class="absolute right-0 left-auto mr-4 leading-none -translate-y-1/2 peer-placeholder-shown:hidden top-1/2 hover:text-primary text-muted">
+          {/*     <span onClick="(() => { this.previousElementSibling.value=''})()" class="absolute right-0 left-auto mr-4 leading-none -translate-y-1/2 peer-placeholder-shown:hidden top-1/2 hover:text-primary text-muted">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
-              </span>
+              </span> */}
           </div>
           <div class="relative lg:hidden flex items-center sm:ml-2 ml-auto">
               <a href="javascript:void(0)" class="flex items-center justify-center w-12 h-12 text-base font-medium leading-normal text-center align-middle transition-colors duration-150 ease-in-out bg-transparent border border-solid shadow-none cursor-pointer rounded-2xl text-stone-500 border-stone-200 hover:text-primary active:text-primary focus:text-primary" onClick="(function(){document.querySelector('.group\\/sidebar').classList.toggle('-translate-x-full');})();">
