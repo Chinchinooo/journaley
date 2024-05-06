@@ -14,18 +14,18 @@ const Entry = ({selectedDiary, handleToggleEdit, isEditable}) => {
                             alt="Just a flower" class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl"/>
                     </div>
                     <div class="flex-auto ml-3 justify-evenly py-2">
-                        <div class="flex flex-wrap ">
+                        <div class="flex flex-wrap justify-center ">
                             <div 
                             class="w-full flex-none text-s text-blue-700 font-medium -mt-2 mb-2 rounded-3xl "
                             contentEditable={isEditable}
-                            style={{backgroundColor}}
+                            style={{backgroundColor, maxWidth: "550px"}}
                             >
                                 {selectedDiary.emotion || "How are you feeling..."}
                             </div>
                             <h2 
-                            class="w-full text-2xl font-medium flex-none mt-2 mb-2 rounded-3xl overflow-hidden text-ellipsis whitespace-nowrap"
+                            class="w-full text-2xl font-medium text-center flex-none mt-2 mb-2 rounded-3xl overflow-hidden text-ellipsis whitespace-nowrap"
                             contentEditable={isEditable}
-                             style={{backgroundColor}}
+                             style={{backgroundColor, maxWidth: "550px"}}
                              title={selectedDiary.title}
 
                              >

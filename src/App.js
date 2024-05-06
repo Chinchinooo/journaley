@@ -166,7 +166,7 @@ Priority
 done -id
 postpone(temporarily removed the x button)
   - x button in searchbox
--date is not shown in entry after save and view diary
+done -date is not shown in entry after save and view diary
 -title (max width)
 -add format for date
 -save diary, the createnewcard close automatically
