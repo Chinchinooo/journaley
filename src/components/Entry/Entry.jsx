@@ -4,6 +4,17 @@ const Entry = ({selectedDiary, handleToggleEdit, isEditable}) => {
     const buttonEditSave = isEditable ? "Save" : "Edit Diary";
     const backgroundColor = isEditable ? "lightgray" : "white";
 
+/*     const handleLength = (e) => {
+        const maxLength = 100;
+        const input = e.target.innerText;
+
+        const maxText = input.length > maxLength
+            ? input.slice(0, maxLength)
+            : input;
+
+        e.target.innerText = maxText;
+}; */
+
     return(
         <div>
 
@@ -25,9 +36,9 @@ const Entry = ({selectedDiary, handleToggleEdit, isEditable}) => {
                             <h2 
                             class="w-full text-2xl font-medium text-center flex-none mt-2 mb-2 rounded-3xl overflow-hidden text-ellipsis whitespace-nowrap"
                             contentEditable={isEditable}
-                             style={{backgroundColor, maxWidth: "550px"}}
-                             title={selectedDiary.title}
-
+                            style={{backgroundColor, maxWidth: "550px"}}
+                            title={selectedDiary.title}
+/*                             onInput={handleLength} */
                              >
                                 {selectedDiary.title || "Enter a title..."}
                              </h2>

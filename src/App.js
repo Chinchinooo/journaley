@@ -161,17 +161,20 @@ done -search bar
 
 issue:
 -title, emotion, all edited did not updated the data
+-save button did not actually save the newest data and the cardlist still display old data when edit the entry
 
 Priority
 done -id
 postpone(temporarily removed the x button)
   - x button in searchbox
 done -date is not shown in entry after save and view diary
--title (max width)
+done -title (max width)
+- title maxlength
 -add format for date
 -save diary, the createnewcard close automatically
 -fix the data / backend
 -log in/logout
+-contentedible need to be changed
 
 */
 
